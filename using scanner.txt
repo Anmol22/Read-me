@@ -1,0 +1,32 @@
+  List<Integer> list = new ArrayList<Integer>();
+
+System.out.print("\n");
+int no = 77150;
+while(no > 0){
+int r = no%10;
+list.add(r);
+no = no/10;
+}
+for(int i=0;i<10;i++){
+int count=0;
+System.out.print(i + " ");
+
+for(int a:list){
+if (i == a) {
+count++;
+}
+}
+
+System.out.println(count);
+System.out.println("");
+}
+
+
+
+If you use the nextLine() method immediately following
+ the nextInt() method, recall that nextInt() reads
+ integer tokens; because of this, the last newline 
+character for that line of integer input is still 
+queued in the input buffer and the next nextLine() 
+will be reading the remainder of the integer line
+ (which is empty).
