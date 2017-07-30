@@ -29,4 +29,199 @@ If you use the nextLine() method immediately following
 character for that line of integer input is still 
 queued in the input buffer and the next nextLine() 
 will be reading the remainder of the integer line
- (which is empty).
+ (which is empty).	
+
+
+parse method is used to convert from some 
+data type to anyother data type
+
+
+arr1.equals(arr2) is same as (arr1 == arr2) 
+if arr1 and arr2 have same object values 
+
+
+class Test {
+  int i;
+} 
+class Main {
+   public static void main(String args[]) { 
+     Test t; 
+     System.out.println(t.i); 
+}  
+// outpit: compile time erro
+ because all non primitive type must be instantiated 
+and allocated memory on heap
+
+
+public class Main { 
+    public static void main(String args[]) { 
+       String x = null; 
+       giveMeAString(x); 
+       System.out.println(x); 
+    } 
+    static void giveMeAString(String y) 
+    { 
+       y = "GeeksQuiz"; 
+    } 
+}Output : Parameters in Java is passed by value. 
+So the changes made to y do not reflect in main().
+
+
+// parameters are passed by value in java .
+
+class Point {
+  int m_x, m_y;
+   
+  public Point(int x, int y) { m_x = x; m_y = y; }
+  public Point() { this(10, 10); }
+  public int getX() { return m_x; }
+  public int getY() { return m_y; }
+   
+  public static void main(String args[]) {
+    Point p = new Point();
+    System.out.println(p.getX());
+  }
+} 
+
+point() calls a constructor with parameter point(int,int) and
+initializes the value
+
+
++,-,*,...- operator precedence is more than == operator 
+
+
+int x = -1;
+System.out.println(x >>> 1);
+System.out.println(x >>> 30);
+System.out.println(x >>> 31);
+System.out.println(x >>> 32);
+
+int y = 2147483647; // x>>>1, now number is positive.
+System.out.println(y >>> 29);
+System.out.println(y >>> 30);
+System.out.println(y >>> 31);
+
+
+
+Something simple:
+
+The value should be a string. convert it to string, if it's not. Like "" + 123 or Integer.toString(123)
+
+// let's assume value holds the String we want to pad
+String value = "123";
+Substring start from the value length char index until end length of padded:
+
+String padded="00000000".substring(value.length()) + value;
+
+// now padded is "00000123"
+More precise
+
+pad right:
+
+String padded = value + ("ABCDEFGH".substring(value.length())); 
+
+// now padded is "123DEFGH"
+pad left:
+
+String padString = "ABCDEFGH";
+String padded = (padString.substring(0, padString.length() - value.length())) + value;
+
+// now padded is "ABCDE123"
+
+Argument Index
+
+Format specifiers can reference arguments in three ways:
+
+Explicit indexing is used when the format specifier contains an argument index. The argument index is a decimal integer indicating the position of the argument in the argument list. The first argument is referenced by "1$", the second by "2$", etc. An argument may be referenced more than once.
+For example:
+
+   formatter.format("%4$s %3$s %2$s %1$s %4$s %3$s %2$s %1$s",
+                    "a", "b", "c", "d")
+   // -> "d c b a d c b a"
+ 
+Relative indexing is used when the format specifier contains a '<' ('\u003c') flag which causes the argument for the previous format specifier to be re-used. If there is no previous argument, then a MissingFormatArgumentException is thrown.
+    formatter.format("%s %s %<s %<s", "a", "b", "c", "d")
+    // -> "a b b b"
+    // "c" and "d" are ignored because they are not referenced
+ 
+Ordinary indexing is used when the format specifier contains neither an argument index nor a '<' flag. Each format specifier which uses ordinary indexing is assigned a sequential implicit index into argument list which is independent of the indices used by explicit or relative indexing.
+   formatter.format("%s %s %s %s", "a", "b", "c", "d")
+   // -> "a b c d"
+ 
+It is possible to have a format string which uses all forms of indexing, for example:
+
+   formatter.format("%2$s %s %<s %s", "a", "b", "c", "d")
+   // -> "b a a b"
+   // "c" and "d" are ignored because they are not referenced
+ 
+
+System.out.printf("%-15s %08d%n",qs,as);
+These are the flag in String formatting using format method
+.3  -  Three places after decimal point.
+ 10.3 - Ten characters in width, right justified, with three places after decimal point.
+
+
+Blank final variables 
+
+blank final means when a final variable doesn't have 
+any value initialzesd
+ 
+class Test 
+{
+ final public int i;
+  
+  Test(int val) { this.i = i;}
+  Test(){ this(10);}
+
+   public static void main(String[] args)
+   {   
+       Test t1 = new Test();
+        System.out.println(t1.i); 
+       Test t2 = new Test(20);        
+        System.out.println(2.i);  
+   } 
+}
+
+An inner class can access private members of its outer class 
+private methods are bonded during compile tome and it is the type
+ of reference variable
+
+
+abstract class A1 {
+            protected int i;
+            abstract void display();
+        }    
+        class B1 extends A1 {
+            int j=30;
+            void display() {
+                int j=10;
+                System.out.println(j);
+            }
+        }    
+        class Abstract_demo {
+            public static void main(String args[])
+            {
+                B1 obj = new B1();
+                obj.j=20;
+                obj.display();    
+            }
+       }
+// Output 10
+this is how the value in an abstract method could be changed 
+   by hiding a field 
+
+read() returns -1.
+read(byte[]) returns -1.
+read(byte[], int, int) returns -1.
+readLine() returns null.
+readXXX() for any other X throws EOFException.
+Scanner.hasNextLine() returns false.
+Scanner.nextLine() throws NoSuchElementException
+
+// these functions run till the end of file 
+
+
+
+
+lifesavi@gmail.com
+saurabh 8073163525
