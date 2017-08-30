@@ -1,0 +1,15 @@
+
+Ways of finding palindromes 
+
+for i in strr:
+	if strr[0] == strr[-1]:
+		print(" its a palindrome ",strr)
+	else: print(" it ain't")
+  
+          OR
+      
+a =" rAce Car"
+x = a.replace(" ","").lower()
+if x[0:] == x[::-1]:
+     print(" it is a palindrome")
+else : print(" it ain't ")
