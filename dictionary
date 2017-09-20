@@ -15,4 +15,17 @@ new_dict = dict(new_sorted_list)
 
 =====================================================================================================================================
 
-question 2: 
+question 2:  Write a Python program to iterate over dictionaries using for loops
+
+d = {'x': 10, 'y': 20, 'z': 30} 
+for dict_key, dict_value in d.items():
+    print(dict_key,'->',dict_value)
+                                          OR
+for i,c in d.items():
+    print(i,c)
+    
+====================================================================================================================================
+question 3: 
+
+    
+
