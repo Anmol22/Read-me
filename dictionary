@@ -25,7 +25,21 @@ for i,c in d.items():
     print(i,c)
     
 ====================================================================================================================================
-question 3: 
+question 3: Write a Python program to combine two dictionary adding values for common keys.
+            d1 = {'a': 100, 'b': 200, 'c': 300}
+            d2 = {'a': 300, 'b': 200, 'd': 400}
+Answer: d = {k : d1[k] + d2[k]for k in set(d1.keys()|d2.keys())}
+====================================================================================================================================
+question 4: Write a Python program to print all unique values in a dictionary.
+            x = [{'V': 'S001'}, {'V': 'S002'}, {'VI': 'S001'}, {'VI': 'S005'}, {'VII': 'S005'}, {'V': 'S009'}, {'VIII': 'S007'}]
+            expected: {'S005', 'S007', 'S001', 'S009', 'S002'}
+Answer: x = set(x for x in x for x in x.values()) or to be clear we can write 
+                                                                   OR          
+Lists = [{'V': 'S001'}, {'V': 'S002'}, {'VI': 'S001'}, {'VI': 'S005'}, {'VII': 'S005'}, {'V': 'S009'}, {'VIII': 'S007'}]
+            expected: {'S005', 'S007', 'S001', 'S009', 'S002'}                                                                    
+Answer :  new_set = set( dicts for vals in Lists for dicts in vals.values())
+
+
 
     
 
